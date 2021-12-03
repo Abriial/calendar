@@ -1,0 +1,209 @@
+/*-----------Основные контейнеры-------------*/
+.main_container {
+	margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar {
+	max-width:80%;
+	display:flex;
+	margin:10px;
+	flex-direction: column;
+}
+
+.div_users {
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+}
+
+/*-----------Backlog-------------*/
+.div_backlog {
+	display:flex;
+	flex-direction: column;
+	background: #dce0e0;
+	text-align:center;
+	padding:10px;
+	margin:10px;
+	max-width:20%;
+}
+
+.div_backlog_element {
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	margin:5px;
+}
+.div_backlog_element:hover {
+	opacity:0.6;
+}
+
+/*-----------Заголовок с датами-------------*/
+
+.calendar_control {
+	background: #D8E6F3;	
+	display:flex;
+	max-width:100%;
+}
+
+.date {
+	background: #AFCDE7;
+	color: white;
+	padding: 10px 20px;
+	display:flex;
+	margin:10px;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    overflow: hidden;
+	max-width:10%;
+}
+
+/*-----------Ячейки-------------*/
+
+.day_block {
+	background: #AFCDE7;
+	padding-right: 15px;
+	padding-left: 2px;
+	display:flex;
+	margin:2px;
+	max-width: 9%;
+    min-width: 9%;
+	min-height:50px;
+	flex-direction: column;
+}
+
+.user_line {
+    display: flex;
+    margin-left:-5%;
+	margin-top:2px;
+}
+
+.user_name {
+	max-width: 9.2%;
+    min-width: 9.2%;
+    margin:2px;
+    background-color: #dce0e0;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+	font-size:12px;
+}
+
+.user_task {
+	border-radius: 2px;
+	margin-top:3px;
+	cursor:default;
+    width: 100%;
+	min-height:15px;
+	text-align:center;
+	border:solid 1px white;
+    background-color: #F8F9F9;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+	font-size:12px;
+}
+
+.user_task:hover::after {
+    content: attr(data-info); 
+    position: absolute; 
+    left: 0; right: 0; bottom: 5px; 
+    z-index: 1;
+    background: rgba(0,42,167,0.6); 
+    color: #fff; 
+    text-align: center; 
+    font-family: Arial, sans-serif; 
+    font-size: 11px; 
+    padding: 5px 10px; 
+    border: 1px solid #333; 
+}
+
+.user_task:hover {
+	opacity:0.6;
+}
+
+/*-----------Кнопки-------------*/
+.step_button {
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	border-color: white;
+	padding:10px;
+	margin:10px;
+}
+
+.step_button:hover {
+	opacity:0.6;
+}
+
+/*------------Мобильная часть-------------*/
+@media (min-width: 769px) and (max-width : 992px) { 
+    .user_task {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width : 768px) { 
+    .main_containe {
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .calendar {
+        max-width: 100%;
+    }
+
+    .calendar_control {
+        font-size: 13px;
+    }
+
+    .user_task {
+        font-size: 13px;
+    }
+
+    .user_name {
+        font-size: 12px;
+    }
+
+    .div_backlog {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .div_backlog_element {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .main_container {
+        display: block;
+    }
+
+    .div_backlog {
+        display: none;
+    }    
+
+    .user_task {
+        font-size: 12px;
+    }
+
+    .calendar {
+        max-width: 100%;
+    }
+
+    .user_name {
+        font-size: 10px;
+    }
+
+    .calendar_control {
+        font-size: 10px;
+    }
+}

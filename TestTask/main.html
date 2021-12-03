@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <title>
+	Test Task
+  </title>
+  <link rel="stylesheet" href="style/main.css" />
+  <script src="scripts/main.js"></script>
+</head>
+<body>
+	<div id='main_container' class='main_container'> 
+		<div id='calendar' class="calendar"> 
+			<div id="calendar_control" class="calendar_control">
+				<button type=button class="step_button" id="back_button" name="back_button" onclick="SwapWeek('prev')" >Back</button>
+				<div class="date"></div>
+				<div class="date"></div>
+				<div class="date"></div>
+				<div class="date"></div>
+				<div class="date"></div>
+				<div class="date"></div>
+				<div class="date"></div>
+				<button type=button class="step_button" id="next_button" name="next_button" onclick="SwapWeek('next')" >Next</button>
+			</div>
+			<div id="div_users" class="div_user">
+			
+			</div>
+		</div>
+		<div class='div_backlog' id='div_backlog'>
+			<h4 id='backlog_title'>Backlog</h4>
+			<input type="text" placeholder="Введите текст для поиска" id='searchText' oninput="SearchTask(this)" name='searchText'/>
+		</div>
+	</div>
+</body>
+</html>
